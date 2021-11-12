@@ -1,0 +1,481 @@
+body {
+    background-image: url(/Images/index2.jpeg);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    overflow-y: scroll;
+    scroll-margin: 0px;
+}
+
+body .content {
+    padding: 0px;
+    padding-top: 0px;
+}
+
+nav {
+    background-color: rgba(1, 9, 10, 0.692);
+    text-decoration: none;
+    width: 100%;
+    display: inline-block;
+    border-radius: 9px;
+    margin-top: 0px;
+}
+
+nav .logo {
+    font-size: larger;
+    float: left;
+    position: relative;
+    padding-left: 4px;
+}
+
+nav .logo a {
+    font-size: 28px;
+    margin: auto;
+    padding-bottom: 4px;
+    float: right;
+    margin-top: 6px;
+    font-weight: 700;
+    color: rgb(238, 238, 238);
+    text-decoration: none;
+}
+
+nav img {
+    height: 36px;
+    width: 36px;
+    float: inline-start;
+    padding: 2px;
+    margin: auto;
+    float: left;
+}
+
+
+
+nav .logo:hover {
+    background-color: black;
+    border-radius: 10px;
+    color: aquamarine;
+
+}
+
+nav .logo a:hover {
+    background-color: black;
+    border-radius: 10px;
+    color: aquamarine;
+
+}
+
+nav .navitems {
+    display: inline-block;
+    margin: auto;
+    justify-self: center;
+    margin-top: 6px;
+}
+
+nav .navitems div .item {
+    display: inline-flex;
+}
+
+nav .navitems a {
+    color: rgb(238, 238, 238);
+    text-decoration: none;
+    font-size: 22px;
+    padding: 9px;
+    font-weight: 600;
+    margin: auto;
+    margin-left: 13px;
+}
+
+nav .navitems a:hover {
+    background-color: black;
+    border-radius: 9px;
+    color: aquamarine;
+    padding-top: 3px;
+    padding-bottom: 5px;
+
+}
+
+.products-drop {
+    background-color: rgba(1, 9, 10, 0.76);
+    padding: 18px;
+    margin-top: 5px;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    z-index: 8;
+    list-style-type: none;
+    position: fixed;
+    display: none;
+}
+
+.products-drop li {
+    padding: 6px;
+}
+
+.products-drop li:hover {
+    background-color: black;
+    border-radius: 9px;
+}
+
+.prof-drop {
+    background-color: rgba(1, 9, 10, 0.76);
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    z-index: 8;
+    margin-top: 26px;
+    list-style-type: none;
+    position: absolute;
+    display: none;
+}
+
+.prof-drop li {
+    padding: 6px;
+}
+
+.prof-drop li:hover {
+    background-color: black;
+    border-radius: 9px;
+}
+
+.home {
+    padding: 13px;
+}
+
+.home-items {
+    background-color: rgba(2, 7, 8, 0.815);
+    width: 100%;
+    height: 30vh;
+    color: aliceblue;
+    border-radius: 9px;
+    justify-content: center;
+}
+
+.home h1 {
+    text-align: center;
+}
+
+footer {
+    padding: 13px;
+    background-color: rgba(1, 10, 10, 0.795);
+    color: #f0f8ff;
+    display: grid;
+    position: relative;
+    font-size: large;
+    border-radius: 18px;
+    justify-content: stretch;
+}
+
+.main-footer {
+    float: inline-start;
+    position: relative;
+}
+
+.main-footer P {
+    word-wrap: break-word;
+
+}
+
+.footer-items {
+    padding: 6px;
+    width: auto;
+    float: inline-end;
+    margin-left: auto;
+    display: inline;
+    justify-content: space-between;
+}
+
+.left-footer {
+    float: left;
+    margin-left: auto;
+}
+
+.right-footer {
+    float: right;
+    color: aliceblue;
+    margin-right: 4vw;
+}
+
+.container {
+    margin-top: 60px;
+}
+
+.home form {
+    background-color: aliceblue;
+    border-radius: 13px;
+    width: max-content;
+    height: auto;
+    padding: 18px;
+    margin: auto;
+    margin-bottom: 24px;
+    box-shadow: 0px 12px 28px 5px rgba(1, 6, 7, 0.747);
+}
+
+form label {
+    font-size: 19px;
+    font-weight: bold;
+    color: rgb(83, 83, 83);
+}
+
+form input {
+    font-size: 18px;
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 18px;
+    height: 32px;
+    outline: none;
+    border-color: rgb(56, 56, 56);
+    border-width: 1.5px;
+    border-radius: 4px;
+}
+
+form input:hover {
+    border-width: 2px;
+    border-color: rgb(58, 58, 58);
+    outline: none;
+}
+
+form input:focus {
+    outline: none;
+    border: solid;
+    border-width: 2px;
+    border-radius: 6px;
+    border-color: cyan;
+    box-shadow: 0px 0px 10px 1px #0ff;
+}
+
+.container h2 {
+    text-align: center;
+    color: rgba(37, 37, 37, 0.788);
+}
+
+.form {
+    padding: 13px
+}
+
+.form:first-child {
+    margin-top: 4px;
+}
+
+input[type=submit] {
+    margin-top: 18px;
+    background-color: #2684ff;
+    height: 40px;
+    font-weight: 800;
+    color: aliceblue;
+}
+
+form img {
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    display: block;
+}
+
+.query {
+    display: inline;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+.query a {
+    padding: 6px;
+    margin-left: 9px;
+    background-color: rgba(37, 37, 37, 0.788);
+    border-radius: 4px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.errors {
+    background-color: rgb(255, 164, 137);
+    padding: 6px;
+    width: 100%;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    min-width: auto;
+    justify-self: center;
+}
+
+.errors .message {
+    font-size: 22px;
+    width: auto;
+    margin: auto;
+
+}
+
+.errors .cancel {
+    font-size: 25px;
+    padding-right: 30px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.info {
+    background-color: rgb(169, 202, 202);
+    padding: 6px;
+    width: calc(100% - 40%);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    min-width: auto;
+    justify-self: center;
+}
+
+.info .message {
+    font-size: 22px;
+    width: auto;
+    margin: auto;
+
+}
+
+.info .cancel {
+    font-size: 25px;
+    padding-right: 30px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.home-items h2 {
+    text-align: center;
+    margin: auto;
+}
+
+.containerp {
+    background-color: aliceblue;
+    max-width: 40vw;
+    width: 60vw;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0px 20px 18px 3px rgba(0, 0, 0, 0.76);
+    margin: auto;
+    margin-bottom: 55px;
+    position: relative;
+    justify-content: center;
+}
+
+.prod {
+    padding: 26px;
+    background-color: rgba(73, 164, 170, 0);
+    border-radius: 13px;
+    margin-bottom: 13px;
+    margin-top: 26px;
+    display: inline-block;
+    justify-content: space-around;
+}
+
+.products-items {
+    background-color: rgba(255, 255, 255, 0.712);
+    padding: 0px;
+    margin: 13px;
+    margin-top: 20px;
+    margin-bottom: 3px;
+    width: 300px;
+    height: 480px;
+    float: left;
+    border-radius: 13px;
+    box-shadow: 0px 8px 13px 2px rgba(0, 0, 0, 0.76);
+}
+
+.prod-desc {
+    margin-left: 14px;
+}
+
+.prodimg img {
+    width: 300px;
+    border-top-right-radius: 13px;
+    border-top-left-radius: 12px;
+    height: 250px;
+}
+
+.products-items:hover {
+    cursor: pointer;
+}
+
+.products-items .title p {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.prof {
+    background-color: aliceblue;
+    padding: 13px;
+    width: 60%;
+    justify-content: center;
+    position: relative;
+    display: list-item;
+    margin: auto;
+    border-radius: 13px;
+}
+
+.prof input[type=submit] {
+    padding: 4px;
+    border-radius: 5px;
+    background-color: rgb(41, 40, 40);
+    text-decoration: none;
+    color: honeydew;
+    font-weight: 700;
+    position: relative;
+    justify-content: center;
+    margin-top: 99%;
+    margin-left: auto;
+}
+
+.actions {
+    margin-top: 13px;
+    position: relative;
+}
+
+.actions a {
+    padding: 9px;
+    background-color: rgb(44, 44, 44);
+    margin-top: 19px;
+    border-radius: 4px;
+    margin-right: 18px;
+    color: rgb(255, 153, 0);
+    text-decoration: none;
+}
+
+.admtable {
+    background-color: aliceblue;
+    border-width: 2px;
+    border: aqua 4px;
+    border-radius: 13px;
+    margin: auto;
+
+}
+
+.admtable table {
+    column-rule-style: groove;
+    row-gap: 13px;
+    border: groove;
+    padding: 16px;
+    border-radius: 13px;
+}
+
+.admtable table tr {
+    padding: 26px;
+    border: groove;
+    row-gap: 13px;
+    margin: 13px;
+}
+
+.home-items .testimage {
+    position: relative;
+    width: 300px;
+    height: 460px;
+    margin: auto;
+    border-radius: 12px;
+    background-color: rgb(126, 0, 0);
+}
+
+.testimage img {
+    position: relative;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    justify-items: center;
+}
