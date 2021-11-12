@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="/static/index.css" rel="stylesheet">
+    <link href="/css.css" rel="stylesheet">
 
     <title>InfiniteComputing | Home Page</title>
     
