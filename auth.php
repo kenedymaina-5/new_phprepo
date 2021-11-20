@@ -28,17 +28,20 @@ if ($result->num_rows > 0) {
     
                             
     // Store data in session variables
-    $_SESSION["loggedin"] = true;
-    $_SESSION["id"] = $id;
-    $_SESSION["username"] = $name; 
+
+    $uname = $name;
+    setcookie("uname", $uname, time()+3600, "/","", 0);
+    setcookie("status", md5('true'), time()+3600, "/","", 0);
     
-    header("Location: http://127.0.0.1:8000/?message=Welcome Back $name&logedin=true&username=$name");
+    header("Location: http://127.0.0.1:8000/?message=Welcome Back $name");
   }else{
     $message = "Incorrect Password, Please try again";
+    setcookie("status", md5('false'), time()+3600, "/","", 0);
     header("Location: http://127.0.0.1:8000/login.php?error= $message");
   }
 } else {
   $message = "Username Not found, Please try again";
+  setcookie("status", md5('true'), time()+3600, "/","", 0);
   header("Location: http://127.0.0.1:8000/login.php?error= $message");
 }
 

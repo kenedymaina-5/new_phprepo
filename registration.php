@@ -2,6 +2,9 @@
 
 if ( isset($_COOKIE['status'])){
     $status = $_COOKIE['status'];
+    if ($status == md5('false')){
+        header("Location: http:/127.0.0.1:8000/");
+    }
     
 }else{
     setcookie("status", "false", time()+3600, "/","", 0);
@@ -18,7 +21,6 @@ if ( isset($_COOKIE['status'])){
                         <img src="/Images/logo5.png" alt="logo">
                         <h2>
                             Please Enter Your credentials to continue
-                            <?php echo $_COOKIE["status"]?>
                         </h2>
                         <label for="username">First Name :</label>
                         <br>
