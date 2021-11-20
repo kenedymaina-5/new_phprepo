@@ -29,7 +29,7 @@ if ($bafter > 0 ){
 }
 
 echo $balance, $prodcode, $prodprice, $bafter;
-$bupdate = "UPDATE Users SET balance='$bafter' WHERE Username ='$username'";
+$bupdate = "UPDATE Users SET balance='$bafter' WHERE username ='$username'";
 $result = $conn->query($bupdate);
 if ($result == True){
     $prodcheck = "DELETE FROM items WHERE barcode = '$prodcode'";
