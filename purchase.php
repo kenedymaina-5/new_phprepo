@@ -11,7 +11,7 @@ $conn = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+$username = $_COOKIE['uname'];
 $authcheck = "SELECT * FROM Users WHERE username = '$username'";
 $confm = $conn->query($authcheck);
 $row = $confm->fetch_assoc();
