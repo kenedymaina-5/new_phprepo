@@ -1,8 +1,9 @@
 <?php
-$dbhost = "localhost";
-$dbusername = "francis";
-$password = "francis";
-$dbname = "infinitecomputing";
+$servername = "remotemysql.com";
+$username = "UtGp1ssC6O";
+$password = "Yk917zbTBf";
+$dbname = "UtGp1ssC6O";
+
 $username = $_COOKIE['uname'];
 
 if ($_COOKIE["status"] != md5("true")){

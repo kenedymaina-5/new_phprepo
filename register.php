@@ -1,10 +1,10 @@
 <?php
 
 //Globals
-$dbhost = "127.0.0.1";
-$dbuser = "francis";
-$dbpasswd = "francis";
-$dbname = "infinitecomputing";
+$servername = "remotemysql.com";
+$username = "UtGp1ssC6O";
+$password = "Yk917zbTBf";
+$dbname = "UtGp1ssC6O";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $username = $_REQUEST['username'];
