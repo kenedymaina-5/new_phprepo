@@ -2,17 +2,18 @@
 
 $pcode = $_GET['code'];
 $username = $_COOKIE['uname'];
-if ($_COOKIE["status"] != "true"){
+if ($_COOKIE["status"] != md5("true")){
   header("Location: /login.php?error=You Must Be loged in to access the Profile page");
 }
 
 
-$dbservername = "localhost";
-$dbusername = "francis";
-$dbpassword = "francis";
-$dbname = "infinitecomputing";
 
-$conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
+$dbhost = "remotemysql.com";
+$dbusername = "UtGp1ssC6O";
+$dbpassword = "Yk917zbTBf";
+$dbname = "UtGp1ssC6O";
+
+$conn = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
@@ -35,9 +36,9 @@ $sql = "INSERT INTO items (`username`, `barcode`, `name`, `price`, `availability
 $result = $conn->query($sql);
 
 if ($result == True){
-  header("Location: http://127.0.0.1:8000/arena.php?message=Item successfully added to cart");
+  header("Location: /arena.php?message=Item successfully added to cart");
 }else{
-  header("Location: http://127.0.0.1:8000/arena.php?message=Failed to add Item to cart");
+  header("Location: /arena.php?message=Failed to add Item to cart");
 
 }
 
