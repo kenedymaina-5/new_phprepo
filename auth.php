@@ -33,16 +33,16 @@ if ($result->num_rows > 0) {
     setcookie("uname", $uname, time()+3600, "/","", 0);
     setcookie("status", md5('true'), time()+3600, "/","", 0);
     
-    header("Location: http://127.0.0.1:8000/?message=Welcome Back $name");
+    header("Location: https://infinitecomputing.herokuapp.com/?message=Welcome Back $name");
   }else{
     $message = "Incorrect Password, Please try again";
     setcookie("status", md5('false'), time()+3600, "/","", 0);
-    header("Location: http://127.0.0.1:8000/login.php?error= $message");
+    header("Location: https://infinitecomputing.herokuapp.com/login.php?error= $message");
   }
 } else {
   $message = "Username Not found, Please try again";
   setcookie("status", md5('true'), time()+3600, "/","", 0);
-  header("Location: http://127.0.0.1:8000/login.php?error= $message");
+  header("Location: https://infinitecomputing.herokuapp.com/login.php?error= $message");
 }
 
 $conn->close();

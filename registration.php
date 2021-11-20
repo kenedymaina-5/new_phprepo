@@ -3,7 +3,7 @@
 if ( isset($_COOKIE['status'])){
     $status = $_COOKIE['status'];
     if ($status == md5('false')){
-        header("Location: http:/127.0.0.1:8000/");
+        header("Location: https://infinitecomputing.herokuapp.com/");
     }
     
 }else{

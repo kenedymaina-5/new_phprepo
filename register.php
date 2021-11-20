@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $email_address = $_REQUEST['email'];
 }
 if($password != $password2){
-    header("Location: http://127.0.0.1:8000/registration.php?error=Passwords Do not match!!!");
+    header("Location: https://infinitecomputing.herokuapp.com/registration.php?error=Passwords Do not match!!!");
 }else {
     
     $conn = new mysqli($dbhost, $dbuser, $dbpasswd, $dbname );
@@ -28,11 +28,11 @@ if($password != $password2){
     $password = md5($password);
     $sql = "INSERT INTO Users (fname, sname, username, email_address, passwords) VALUES('$first_name','$second_name','$username','$email_address','$password');";
     if ($conn->query($sql) === TRUE){
-        header("Location: http://127.0.0.1:8000/?message=Account created successfully!!! Currently loged in as $username&logedin=true");
+        header("Location: https://infinitecomputing.herokuapp.com/?message=Account created successfully!!! Currently loged in as $username&logedin=true");
     }else{
         $errorno =  $conn->errno;
         if ($errorno == 1062){
-            header("Location: http://127.0.0.1:8000/registration.php?error=Username Alredy Exists Choose another Or Consider login in.");
+            header("Location: https://infinitecomputing.herokuapp.com/registration.php?error=Username Alredy Exists Choose another Or Consider login in.");
         }
         echo "Not succcessful" . $conn->error, $conn->errno;
     }
