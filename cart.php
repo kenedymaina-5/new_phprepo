@@ -1,4 +1,5 @@
 <?php
+
 $servername = "remotemysql.com";
 $username = "UtGp1ssC6O";
 $password = "Yk917zbTBf";
@@ -18,7 +19,7 @@ $balance = $row['balance'];
 ?>
 
        
-<?php require("head2.php"); ?>
+<?php require("header.php"); ?>
 <?php require("message.php"); ?>
         <div class="content">
         <div class="prod">
@@ -62,4 +63,4 @@ $balance = $row['balance'];
         
         </div>
         </div>
-        <?php require("foot2.php"); ?>
+        <?php require("footer.php"); ?>
