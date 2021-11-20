@@ -2,10 +2,10 @@
 
 
 
-$servername = "localhost";
-$username = "francis";
-$password = "francis";
-$dbname = "infinitecomputing";
+$servername = "remotemysql.com";
+$username = "UtGp1ssC6O";
+$password = "Yk917zbTBf";
+$dbname = "UtGp1ssC6O";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
