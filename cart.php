@@ -1,13 +1,13 @@
 <?php
 
-$servername = "remotemysql.com";
-$username = "UtGp1ssC6O";
-$password = "Yk917zbTBf";
+$dbhost = "remotemysql.com";
+$dbusername = "UtGp1ssC6O";
+$dbpassword = "Yk917zbTBf";
 $dbname = "UtGp1ssC6O";
 
 $username = $_COOKIE['uname'];
 
-$conn = new mysqli($dbhost, $dbusername, $password, $dbname);
+$conn = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
   // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
