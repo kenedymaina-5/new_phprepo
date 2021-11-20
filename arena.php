@@ -26,7 +26,7 @@ $balance = $row['balance'];
 
        
 <?php require("header.php"); ?>
-<?php require("message.php"); ?>
+<?php require("messages.php"); ?>
         <div class="content">
         <div class="prod">
             <?php
