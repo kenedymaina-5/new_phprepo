@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/index.css">
 
     <title>Infinite Computing | Test nav</title>
 </header>
