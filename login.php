@@ -2,16 +2,13 @@
 
 if ( isset($_COOKIE['status'])){
     $status = $_COOKIE['status'];
+    if ($status == md5("true")){
+        header("Location: /?message=You are already loged in");
+    }
 }else{
-    setcookie("status", "false", time()+3600, "/","", 0);
+    setcookie("status", md5("false"), time()+3600, "/","", 0);
 }
 
-session_start();
-if ($_SESSION["id"] == ""){
-    
-    $_SESSION["id"] = 1;
-    $_SESSION["name"] == "Francis";
-}
 ?>
 <?php require("header.php"); ?>
         <div class="home">
@@ -22,7 +19,6 @@ if ($_SESSION["id"] == ""){
                         <img src="/Images/logo5.png" alt="logo">
                         <h2>
                             Please Enter Your credentials to continue
-                            <?php echo $_COOKIE["status"]?>
                         </h2>
                         <label for="username">Username :</label>
                         <br>

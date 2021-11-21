@@ -1,16 +1,8 @@
 <?php
 
-$servername = "remotemysql.com";
-$username = "UtGp1ssC6O";
-$password = "Yk917zbTBf";
-$dbname = "UtGp1ssC6O";
+require("conn.php");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Failed to establish connection to the database. Report burg?: " . $conn->connect_error);
-}
-$smt = "SELECT * FROM products WHERE category='laptop'";
+$smt = "SELECT * FROM products";
 $laptops = $conn->query($smt);
 
 $smtt = "SELECT * FROM products WHERE category='desktop'";
@@ -24,13 +16,16 @@ if (isset($_COOKIE['uname'])){
 }
 
 require('header.php');
+require('messages.php');
 ?>
 
 <div class="content">
-    <div class="none">
         
         <h3>Sample products : category Laptops</h3>
     <div class="home-content">
+        <span class="btn-prev"><button>prev</button></span>
+        <span class="btn-next"><button>Next</button></span>
+        
         <?php
             if ($laptops->num_rows > 0){
                 while($row = $laptops->fetch_assoc()){
@@ -46,7 +41,7 @@ require('header.php');
                         $avail = "Not Available<br>";
                     }
                     echo "
-                    <div class='home-products'>
+                    <a href='/products.php?code=$pbarcode'><div class='home-products'>
                         <div class='prodimg'>
                             <img src='/Images/$pimg' alt='$pbarcode'>
                         </div>
@@ -55,14 +50,12 @@ require('header.php');
                             Price : Ksh$pprice<br>
                             $avail
                         </div>
-                    </div>
+                    </div></a>
                 ";
                 }
             }
         ?>
     </div>
-    </div>
-    <div class="none">
         
     <h3>Sample products : category Laptops</h3>
     <div class="home-content">
@@ -97,7 +90,6 @@ require('header.php');
         ?>
     </div>
 
-    </div>
 </div>
 
 <?php

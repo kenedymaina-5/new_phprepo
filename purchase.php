@@ -1,16 +1,7 @@
 <?php
 
-$dbhost = "remotemysql.com";
-$dbusername = "UtGp1ssC6O";
-$dbpassword = "Yk917zbTBf";
-$dbname = "UtGp1ssC6O";
+require("conn.php");
 
-
-$conn = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
-  // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 $username = $_COOKIE['uname'];
 $authcheck = "SELECT * FROM Users WHERE username = '$username'";
 $confm = $conn->query($authcheck);

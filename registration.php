@@ -2,8 +2,8 @@
 
 if ( isset($_COOKIE['status'])){
     $status = $_COOKIE['status'];
-    if ($status == md5('false')){
-        header("Location: https://infinitecomputing.herokuapp.com/");
+    if ($status == md5('true')){
+        header("Location: /?message=You are already loged in");
     }
     
 }else{

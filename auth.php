@@ -1,9 +1,6 @@
 <?php
 
-$servername = "remotemysql.com";
-$username = "UtGp1ssC6O";
-$password = "Yk917zbTBf";
-$dbname = "UtGp1ssC6O";
+require("conn.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // collect value of input field
@@ -15,9 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+
 $sqlquery = ("SELECT   username, passwords FROM Users WHERE username='$name'");
 $result = $conn->query($sqlquery);
 
@@ -33,16 +28,16 @@ if ($result->num_rows > 0) {
     setcookie("uname", $uname, time()+3600, "/","", 0);
     setcookie("status", md5('true'), time()+3600, "/","", 0);
     
-    header("Location: https://infinitecomputing.herokuapp.com/?message=Welcome Back $name");
+    header("Location: /?message=Welcome Back $name");
   }else{
     $message = "Incorrect Password, Please try again";
     setcookie("status", md5('false'), time()+3600, "/","", 0);
-    header("Location: https://infinitecomputing.herokuapp.com/login.php?error= $message");
+    header("Location: /login.php?error= $message");
   }
 } else {
   $message = "Username Not found, Please try again";
-  setcookie("status", md5('true'), time()+3600, "/","", 0);
-  header("Location: https://infinitecomputing.herokuapp.com/login.php?error= $message");
+  setcookie("status", md5('false'), time()+3600, "/","", 0);
+  header("Location: /login.php?error= $message");
 }
 
 $conn->close();

@@ -1,5 +1,7 @@
 <?php
 
+require("conn.php");
+
 $pcode = $_GET['code'];
 $username = $_COOKIE['uname'];
 if ($_COOKIE["status"] != md5("true")){
@@ -8,16 +10,8 @@ if ($_COOKIE["status"] != md5("true")){
 
 
 
-$dbhost = "remotemysql.com";
-$dbusername = "UtGp1ssC6O";
-$dbpassword = "Yk917zbTBf";
-$dbname = "UtGp1ssC6O";
 
-$conn = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+
 $smt = "SELECT * FROM products WHERE barcode = '$pcode'";
 
 $output = $conn->query($smt);

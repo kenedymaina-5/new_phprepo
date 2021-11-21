@@ -1,17 +1,12 @@
 <?php
 
-$dbhost = "remotemysql.com";
-$dbusername = "UtGp1ssC6O";
-$dbpassword = "Yk917zbTBf";
-$dbname = "UtGp1ssC6O";
+if ($_COOKIE["status"] != md5("true")){
+    header("Location: /login.php?error=You Must Be loged in to access the Profile page");
+  }
+
+require("conn.php");
 
 $username = $_COOKIE['uname'];
-
-$conn = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
-  // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 $authcheck = "SELECT * FROM Users WHERE username = '$username'";
 $confm = $conn->query($authcheck);
 $row = $confm->fetch_assoc();
@@ -22,7 +17,7 @@ $balance = $row['balance'];
 <?php require("header.php"); ?>
 <?php require("messages.php"); ?>
         <div class="content">
-        <div class="prod">
+            <div class="prod">
             <?php
             $sql = "SELECT * FROM items WHERE username = '$username'";
             $result = $conn->query($sql);
@@ -57,10 +52,17 @@ $balance = $row['balance'];
                     echo "</div>";
                 }
                 
+            }else{
+                echo '
+                <div class="empty-cart">
+                    <p>No Items in the cart yet<p>
+                    <p>Items you Add to cart will be displayed here</p>
+                    <p><a href="/arena.php">Go to market to add items?</a>
+                </div>
+                ';
             }
                 
             ?>
-        
-        </div>
+            </div>
         </div>
         <?php require("footer.php"); ?>

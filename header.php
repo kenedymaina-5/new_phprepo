@@ -16,17 +16,18 @@
 </header>
 
 <body >
-    <nav>
-        <div class="logo">
-            <a href="#">Infinite Computing</a>
-        </div>
+    <nav id="navbar">
         <ul class="navitems" id="navb">
+            <li>
+                <div class="logo">
+                    <a href="/">Infinite Computing</a>
+                </div>
+            </li>
             <li><a href="/">Home</a></li>
             <li><a href="/arena.php">Market</a></li>
-            <li><a href="/messages.php">Messages</a></li>
-            <li><a href="/cart.php">Cart</a></li>
             <?php 
                 if ($status == $t){
+                    echo "<li><a href='/cart.php'>Cart</a></li>";
                     echo "<li><a href='#'>Bal: Ksh$balance</a></li>";
                    echo '
                     <li class="tprofile"><a href="#">Profile></a></li>

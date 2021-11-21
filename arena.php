@@ -1,23 +1,14 @@
 <?php
 
-$dbhost = "remotemysql.com";
-$dbusername = "UtGp1ssC6O";
-$password = "Yk917zbTBf";
-$dbname = "UtGp1ssC6O";
+require("conn.php");
 
 $username = $_COOKIE['uname'];
 
 if ($_COOKIE["status"] != md5("true")){
-    header("Location: /login.php?error=You Must Be loged in to access the Profile page");
+    header("Location: /login.php?error=You Must Be loged in to access the Market page");
   }
-$conn = new mysqli($dbhost, $dbusername, $password, $dbname);
-  // Check connection
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
-}
-if ($_COOKIE['status'] != "true"){
-    $message = "Not loged in";
-}
+
+
 $authcheck = "SELECT * FROM Users WHERE username = '$username'";
 $confm = $conn->query($authcheck);
 $row = $confm->fetch_assoc();
