@@ -1,6 +1,6 @@
 <?php
 
-require("conn.php");
+require("includes/conn.php");
 
 $username = $_COOKIE['uname'];
 $authcheck = "SELECT * FROM Users WHERE username = '$username'";

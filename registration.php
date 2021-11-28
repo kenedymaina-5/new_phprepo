@@ -10,14 +10,14 @@ if ( isset($_COOKIE['status'])){
     setcookie("status", "false", time()+3600, "/","", 0);
 }
 ?>
-<?php require("header.php"); ?>
+<?php require("includes/header.php"); ?>
         <div class="home">
             <div class="container">
 
                 <form action="register.php" class="loreg" method="post">
                     <div class="form">
 
-                        <?php require("errors.php"); ?>
+                        <?php require("includes/errors.php"); ?>
                         <img src="/Images/logo5.png" alt="logo">
                         <h2>
                             Please Enter Your credentials to continue
@@ -55,4 +55,4 @@ if ( isset($_COOKIE['status'])){
                 </form>
             </div>
         </div>
-        <?php require("footer.php"); ?>
+        <?php require("includes/footer.php"); ?>

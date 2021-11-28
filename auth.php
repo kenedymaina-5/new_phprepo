@@ -1,6 +1,6 @@
 <?php
 
-require("conn.php");
+require("includes/conn.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // collect value of input field

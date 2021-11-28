@@ -1,6 +1,7 @@
 <?php
 
-require("conn.php");
+require("includes/conn.php");
+require("includes/variables.php");
 
 $smt = "SELECT * FROM products";
 $laptops = $conn->query($smt);
@@ -12,14 +13,17 @@ if (isset($_COOKIE['uname'])){
     $smmt = "SELECT * FROM Users WHERE username = '$uname'";
     $bal = $conn->query($smmt);
     $row = $bal->fetch_assoc();
+    
+    
     $balance = $row['balance'];
 }
 
-require('header.php');
-require('messages.php');
+require('includes/header.php');
+require('includes/messages.php');
+require('includes/errors.php');
 ?>
 
-<div class="content">
+<div class="content" style="flex-direction: column;">
         
         <h3>Sample products : category Laptops</h3>
     <div class="home-content">
@@ -93,5 +97,5 @@ require('messages.php');
 </div>
 
 <?php
-    require('footer.php');
+    require('includes/footer.php');
 ?>

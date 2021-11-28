@@ -1,15 +1,12 @@
 <?php
 
-require("conn.php");
+require("includes/conn.php");
 
 $pcode = $_GET['code'];
 $username = $_COOKIE['uname'];
 if ($_COOKIE["status"] != md5("true")){
   header("Location: /login.php?error=You Must Be loged in to access the Profile page");
 }
-
-
-
 
 
 $smt = "SELECT * FROM products WHERE barcode = '$pcode'";

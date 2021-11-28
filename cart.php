@@ -4,18 +4,32 @@ if ($_COOKIE["status"] != md5("true")){
     header("Location: /login.php?error=You Must Be loged in to access the Profile page");
   }
 
-require("conn.php");
+require("includes/conn.php");
 
+require("includes/variables.php");
 $username = $_COOKIE['uname'];
 $authcheck = "SELECT * FROM Users WHERE username = '$username'";
 $confm = $conn->query($authcheck);
 $row = $confm->fetch_assoc();
 $balance = $row['balance'];
+
+
+$uname = $_COOKIE['uname'];
+$stm = "SELECT * FROM items WHERE username = '$uname'";
+$data2 = $conn->query($stm);
+
+$tprice = 0;
+$tcount = 0;
+while($new_data = $data2->fetch_assoc()){
+    $tprice += $new_data['price'];
+    $tcount += 1;
+}
+
 ?>
 
        
-<?php require("header.php"); ?>
-<?php require("messages.php"); ?>
+<?php require("includes/header.php"); ?>
+<?php require("includes/messages.php"); ?>
         <div class="content">
             <div class="prod">
             <?php
@@ -64,5 +78,10 @@ $balance = $row['balance'];
                 
             ?>
             </div>
+            <div class="cart-side">
+                <span>Number of items : <?php echo "<strong>$tcount</strong>"; ?></span>
+                <span>Total price : <?php echo "<strong>$tprice</strong>"; ?></span>
+                <span><a href="/purchase.php?price=$tprice">Purchase all</a></span>
+            </div>
         </div>
-        <?php require("footer.php"); ?>
+        <?php require("includes/footer.php"); ?>

@@ -10,11 +10,11 @@ if ( isset($_COOKIE['status'])){
 }
 
 ?>
-<?php require("header.php"); ?>
+<?php require("includes/header.php"); ?>
         <div class="home">
             <div class="container">
-                <form action=auth.php class="loreg" method="post">
-                    <?php require("errors.php"); ?>
+                <form action="auth.php" class="loreg" method="post">
+                    <?php require("includes/errors.php"); ?>
                     <div class="form">
                         <img src="/Images/logo5.png" alt="logo">
                         <h2>
@@ -37,4 +37,4 @@ if ( isset($_COOKIE['status'])){
                 </form>
             </div>
         </div>
-        <?php require("footer.php"); ?>
+        <?php require("includes/footer.php"); ?>

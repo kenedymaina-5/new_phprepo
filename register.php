@@ -1,6 +1,6 @@
 <?php
 
-require("conn.php");
+require("includes/conn.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $username = $_REQUEST['username'];
@@ -18,6 +18,9 @@ if($password != $password2){
 $password = md5($password);
 $sql = "INSERT INTO Users (fname, sname, username, email_address, passwords) VALUES('$first_name','$second_name','$username','$email_address','$password');";
 if ($conn->query($sql) === TRUE){
+    $uname = $username;
+    setcookie("uname", $uname, time()+3600, "/","", 0);
+    setcookie("status", md5('true'), time()+3600, "/","", 0);
     header("Location: /?message=Account created successfully!!! Currently loged in as $username&logedin=true");
 }else{
     $errorno =  $conn->errno;

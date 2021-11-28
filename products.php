@@ -1,6 +1,7 @@
 <?php
 
-require("conn.php");
+require("includes/conn.php");
+require("includes/variables.php");
 $code = $_GET['code'];
 
 $smt = "SELECT * FROM products WHERE barcode='$code'";
@@ -14,15 +15,15 @@ $pbarcode = $row['barcode'];
 $pimg = "$pbarcode". ".jpg";
 $pavail = $row['availability'] ; 
 
-require("header.php");
-require('messages.php');
+require("includes/header.php");
+require('includes/messages.php');
 echo "
-    <div class='content'>
+    <div class='product'>
     <div class='product-item'>
         <div class='product-image'>
             <img src='/Images/$pimg' alt=$pbarcode'>
         </div>
-        <div class='product-description'>
+        <div class='product-desc'>
             <p>$pname</p>
             <p>$pdesc</p>
             <p>$pprice</p>
@@ -38,11 +39,11 @@ echo "
         </div>
                 
         <div class='product-action'>
-            <a href='#'>Add to cart</a><a href='#'>Purcase</a>
+            <a href='/addcart.php?code=$pbarcode'>Add to cart</a><a href='purchase.php?code=$pbarcode'>Purcase</a>
         </div>
         </div>
     </div>
 ";
-require("footer.php");
+require("includes/footer.php");
 
 ?>

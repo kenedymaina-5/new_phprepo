@@ -7,7 +7,7 @@ if ($_COOKIE["status"] != md5("true")){
 }
 
 
-require("conn.php");
+require("includes/conn.php");
 
 $smt = "DELETE FROM items WHERE id = $pid";
 

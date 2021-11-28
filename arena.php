@@ -1,7 +1,8 @@
 <?php
 
-require("conn.php");
+require("includes/conn.php");
 
+require("includes/variables.php");
 $username = $_COOKIE['uname'];
 
 if ($_COOKIE["status"] != md5("true")){
@@ -16,8 +17,8 @@ $balance = $row['balance'];
 ?>
 
        
-<?php require("header.php"); ?>
-<?php require("messages.php"); ?>
+<?php require("includes/header.php"); ?>
+<?php require("includes/messages.php"); ?>
         <div class="content">
         <div class="prod">
             <?php
@@ -61,5 +62,5 @@ $balance = $row['balance'];
         
         </div>
         </div>
-        <?php require("footer.php"); ?>
+        <?php require("includes/footer.php"); ?>
         
